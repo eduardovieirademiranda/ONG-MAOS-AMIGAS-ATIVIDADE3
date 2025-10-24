@@ -28,14 +28,14 @@
     <div class="container header__inner">
       <nav class="navbar flex items-center justify-between">
         <a href="index.html" class="brand flex items-center gap-2">
-          <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo" width="120">
+          <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo" width="120" height="120" loading="lazy">
           <span>ONG Mãos Amigas</span>
         </a>
 
         <div class="links menu__list flex gap-2">
-          <a href="index.html">Início</a>
-          <a href="projetos.html">Projetos</a>
-          <a href="cadastro.html" class="ativo" aria-current="page">Cadastro</a>
+          <a href="index.html" class="botao--menu">🏠 Início</a>
+          <a href="projetos.html" class="botao--menu">📋 Projetos</a>
+          <a href="cadastro.html" class="ativo botao--menu" aria-current="page">🤝 Cadastro</a>
         </div>
       </nav>
     </div>
@@ -43,15 +43,12 @@
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="section">
-    <!-- TÍTULO DA PÁGINA -->
     <section class="container">
       <h1>Cadastro de Voluntário</h1>
       <p>Preencha o formulário para participar das nossas ações sociais. Seus dados são utilizados apenas para contato.</p>
     </section>
 
-    <!-- GRID: FORM + LATERAL -->
     <section class="container grid-12">
-      <!-- COLUNA FORMULÁRIO -->
       <div class="md:col-6 col-12">
         <form action="#" method="post" class="card" id="form-cadastro" novalidate>
           <div class="card__body">
@@ -111,11 +108,10 @@
             <div class="acoes">
               <button type="submit" class="botao">Enviar cadastro</button>
             </div>
-          </div> <!-- /card__body -->
+          </div>
         </form>
-      </div> <!-- /col formulário -->
+      </div>
 
-      <!-- COLUNA LATERAL -->
       <aside class="md:col-6 col-12">
         <div class="card">
           <div class="card__body">
@@ -126,39 +122,35 @@
               <li><strong>E-mail:</strong> ongmaosamigas@gmail.com</li>
               <li><strong>Chave alternativa:</strong> eduardo.mi.2005@gmail.com</li>
             </ul>
-            <img src="imagens/doacoes.jpg" alt="Pessoa realizando uma doação" width="340">
-          </div> <!-- /card__body -->
-        </div> <!-- /card -->
+
+            <button id="btn-qr" class="botao botao--secundario" type="button" aria-controls="qr-area" aria-expanded="false">
+              Mostrar QR do PIX
+            </button>
+
+            <figure id="qr-area" hidden class="mt-2">
+              <img src="imagens/pix-qr.png" alt="QR Code do PIX da ONG Mãos Amigas" width="260" height="260" loading="lazy">
+              <figcaption>Escaneie o QR Code para doar via PIX.</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <div class="card mt-3" id="doacao">
           <div class="card__body">
             <h2 class="card__title">Por que ser voluntário?</h2>
             <p>Você contribui diretamente para transformar realidades e ainda desenvolve habilidades socioemocionais.</p>
-          </div> <!-- /card__body -->
-        </div> <!-- /card -->
-      </aside> <!-- /aside -->
-    </section> <!-- /section grid -->
-
-  </main> <!-- /main -->
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
 
   <!-- RODAPÉ -->
   <footer class="footer center">
     <p>&copy; 2025 ONG Mãos Amigas — Todos os direitos reservados.</p>
   </footer>
 
-  <!-- (Opcional) Máscaras se você estiver usando jQuery Mask na Atv. 3 -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-  <script>
-    (function() {
-      if (window.jQuery && $.fn.mask) {
-        $('#cpf').mask('000.000.000-00');
-        $('#telefone').mask('(00) 00000-0000');
-        $('#cep').mask('00000-000');
-      }
-    })();
-  </script>
-  <!-- Seu JS (se houver) -->
   <script src="js/app.js"></script>
 </body>
 </html>

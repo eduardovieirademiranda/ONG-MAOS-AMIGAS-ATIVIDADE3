@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ONG Mãos Amigas — Página Inicial</title>
-  <meta name="description" content="Conheça a ONG Mãos Amigas, nossos projetos sociais e como participar como voluntário ou doador.">
+  <meta name="description" content="Conheça a ONG Mãos Amigas, nossos projetos sociais e como participar como voluntário ou doador." />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="ONG Mãos Amigas — Página Inicial">
-  <meta property="og:description" content="Conheça a ONG Mãos Amigas e participe dos nossos projetos.">
-  <meta property="og:image" content="imagens/ogcover.png">
-  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ONG Mãos Amigas — Página Inicial" />
+  <meta property="og:description" content="Conheça a ONG Mãos Amigas e participe dos nossos projetos." />
+  <meta property="og:image" content="imagens/ogcover.png" />
+  <meta property="og:locale" content="pt_BR" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ONG Mãos Amigas — Página Inicial">
-  <meta name="twitter:description" content="Conheça a ONG Mãos Amigas e participe dos nossos projetos.">
-  <meta name="twitter:image" content="imagens/ogcover.png">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ONG Mãos Amigas — Página Inicial" />
+  <meta name="twitter:description" content="Conheça a ONG Mãos Amigas e participe dos nossos projetos." />
+  <meta name="twitter:image" content="imagens/ogcover.png" />
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="page--home">
   <!-- CABEÇALHO -->
   <header class="header">
     <div class="container header__inner">
-      <nav class="navbar flex items-center justify-between">
+      <nav class="navbar flex items-center justify-between" aria-label="Menu principal">
         <a href="index.html" class="brand flex items-center gap-2">
-          <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo" width="120">
+          <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo" width="120" height="120" loading="lazy" />
           <span>ONG Mãos Amigas</span>
         </a>
 
+        <!-- MENU DE NAVEGAÇÃO -->
         <div class="links menu__list flex gap-2">
-          <a href="index.html" class="ativo" aria-current="page">Início</a>
-          <a href="projetos.html">Projetos</a>
-          <a href="cadastro.html">Cadastro</a>
+          <a href="index.html" class="ativo botao--menu" aria-current="page">🏠 Início</a>
+          <a href="projetos.html" class="botao--menu">📋 Projetos</a>
+          <a href="cadastro.html" class="botao--menu">🤝 Cadastro</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- SEÇÃO HERO -->
-  <section class="hero center">
-    <h2 class="sr-only">Sessão principal</h2>
-    <div class="container">
-      <h1 id="Juntos">Juntos Podemos Transformar o Mundo</h1>
+  <main class="container">
+    <!-- BOTÕES HOME E DESTAQUE -->
+    <nav class="menu__tabs" aria-label="Navegação interna">
+      <a href="#home" class="tab ativo" data-page="home" aria-current="page">🏠 Home</a>
+      <a href="#destaque" class="tab" data-page="destaque">⭐ Destaque</a>
+    </nav>
+
+    <!-- SEÇÃO HOME -->
+    <section id="home" class="tab-content">
+      <h1 id="Juntos">Juntos Podemos Transformar Vidas</h1>
       <p>Conectamos pessoas e comunidades para construir um futuro mais solidário e sustentável.</p>
-      <a href="cadastro.html" class="botao">Seja Voluntário</a>
-    </div>
-  </section>
 
-  <!-- SEÇÃO SOBRE -->
-  <section class="sobre container">
-    <h2>Quem Somos</h2>
-    <p>A <strong>ONG Mãos Amigas</strong> é uma organização sem fins lucrativos dedicada a promover a solidariedade e o desenvolvimento social por meio de ações que transformam vidas.</p>
-    <img src="imagens/sobre.jpg" alt="Equipe de voluntários da ONG Mãos Amigas">
-  </section>
+      <h2>Quem Somos</h2>
+      <p>A <strong>ONG Mãos Amigas</strong> é uma organização sem fins lucrativos dedicada a promover a solidariedade e o desenvolvimento social por meio de ações que transformam vidas.</p>
+      <img src="imagens/voluntario 3.jpg" alt="Equipe de voluntários da ONG Mãos Amigas" width="800" height="450" loading="lazy" />
 
-  <!-- SEÇÃO DOAÇÕES -->
-  <section class="doacoes container">
-    <h2>Como Ajudar</h2>
-    <p>Você pode contribuir com nossos projetos de várias formas. Cada doação ajuda a transformar vidas!</p>
-    <ul>
-      <li><strong>PIX:</strong> 11.222.333/0011-44</li>
-      <li><strong>E-mail:</strong> ongmaosamigas@gmail.com</li>
-      <li><strong>Chave PIX alternativa:</strong> eduardo.mi.2005@gmail.com</li>
-    </ul>
-    <img src="imagens/doacoes.jpg" alt="Pessoa fazendo uma doação">
-  </section>
+      <h2>Como Ajudar</h2>
+      <p>Você pode contribuir com nossos projetos de várias formas. Cada doação ajuda a transformar vidas!</p>
+      <ul>
+        <li><strong>PIX:</strong> 11.222.333/0011-44</li>
+        <li><strong>E-mail:</strong> ongmaosamigas@gmail.com</li>
+        <li><strong>Chave PIX alternativa:</strong> eduardo.mi.2005@gmail.com</li>
+      </ul>
+    </section>
 
-  <!-- SEÇÃO PROJETOS -->
-  <section class="projetos container">
-    <h2>Nossos Projetos</h2>
-    <p>Conheça algumas das ações que realizamos para melhorar a qualidade de vida das pessoas e promover a solidariedade nas comunidades.</p>
+    <!-- SEÇÃO DESTAQUE -->
+    <section id="destaque" class="tab-content">
+      <h2>Projetos em Destaque</h2>
+      <p>Conheça algumas das ações que realizamos para melhorar a qualidade de vida das pessoas e promover a solidariedade nas comunidades.</p>
 
-    <div class="grid-12 mt-3">
-      <article class="card md:col-6 col-12">
-        <h3 class="card__title">Projeto Esperança</h3>
-        <img src="imagens/esporte-saude.jpg" alt="Crianças em atividades do projeto Esperança" width="340">
-        <p>Voltado para crianças em situação de vulnerabilidade, o projeto oferece atividades esportivas e educativas que incentivam o desenvolvimento pessoal e social.</p>
-      </article>
+      <div class="grid-12 mt-3">
+        <article class="card md:col-6 col-12">
+          <h3 class="card__title">Projeto Esperança</h3>
+          <img src="imagens/esporte-saude.jpg" alt="Crianças em atividades do projeto Esperança" width="340" loading="lazy" />
+          <p>Voltado para crianças em situação de vulnerabilidade, o projeto oferece atividades esportivas e educativas que incentivam o desenvolvimento pessoal e social.</p>
+        </article>
 
-      <article class="card md:col-6 col-12">
-        <h3 class="card__title">Projeto Vida em Ação</h3>
-        <img src="imagens/vida-acao.jpg" alt="Voluntários ajudando em um projeto de distribuição de alimentos" width="340">
-        <p>Promove campanhas de arrecadação de alimentos e produtos de higiene, garantindo dignidade para famílias em situação de vulnerabilidade.</p>
-      </article>
-    </div>
-  </section>
+        <article class="card md:col-6 col-12">
+          <h3 class="card__title">Projeto Vida em Ação</h3>
+          <img src="imagens/Hortas.jpg" alt="Voluntários ajudando em um projeto de Hortas de alimentos" width="340" loading="lazy" />
+          <p>Promove campanhas de arrecadação de alimentos e produtos de higiene, garantindo dignidade para famílias em situação de vulnerabilidade.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-  <!-- RODAPÉ -->
   <footer class="footer center">
     <p>&copy; 2025 ONG Mãos Amigas — Todos os direitos reservados.</p>
   </footer>
+
+  <!-- JS SPA -->
+  <script src="js/app.js"></script>
 </body>
 </html>

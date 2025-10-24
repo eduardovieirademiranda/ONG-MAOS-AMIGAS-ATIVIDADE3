@@ -48,7 +48,7 @@ A página **projetos.html** apresenta os principais projetos da ONG:
 | Projeto | Descrição |
 |----------|------------|
 | **Projeto Esperança** | Voltado a crianças em vulnerabilidade social, com esportes e atividades educativas. |
-| **Projeto Vida em Ação** | Arrecada e distribui alimentos e produtos de higiene a famílias carentes. |
+|
 
 Cada projeto é exibido em formato de **card responsivo**, mantendo a harmonia visual com o restante do site.
 
@@ -70,7 +70,8 @@ localStorage.setItem("maosamigas.pagina", id);
 As três páginas foram testadas no W3C Validator
  e estão 100% válidas.
 
+
 Página	Resultado	Print
-![Validação da página inicial no W3C](imagens/docs/indexw3c.png)
+![Validação da página inicial no W3C](imagens/docs/index-w3c.png)
 ![Validação da página Projeto no W3C](imagens/docs/projw3c.png)
 ![Validação da página Cadastro W3C](imagens/docs/cadw3c.png)

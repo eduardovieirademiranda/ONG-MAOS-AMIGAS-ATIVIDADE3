@@ -1,0 +1,370 @@
+/* ==============================================
+   ONG MÃOS AMIGAS — STYLE GLOBAL
+   Organização: Reset, Tokens, Base, Layout, Cabeçalho, Conteúdo, Formulário, Rodapé, Utils, Responsivo
+   Fonte: Cabin (Google Fonts)
+============================================== */
+
+/* ===== Reset suave / normalização ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html:focus-within { scroll-behavior: smooth; }
+body, h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ===== Design tokens (paleta & tipografia) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root{
+  /* Marca */
+  --brand: #0077b6;
+  --brand-700: #005f8d;
+  --brand-50: #e6f2fa;
+
+  /* Paleta complementar (8 cores no total) */
+  --blue-600: #3A8DDE;
+  --blue-500: #5CB3FF;
+  --blue-300: #6DAEDB;
+  --green-500: #2eb872;
+  --orange-500: #ff8a3d;
+
+  /* Neutros */
+  --neutral-900: #111;
+  --neutral-800: #222;
+  --neutral-700: #333;
+  --neutral-400: #777;
+  --neutral-200: #e9ecef;
+  --neutral-150: #f4f6f8;
+  --neutral-100: #f4f4f4;
+  --neutral-50:  #fff;
+
+  /* Superfícies / borda / raio */
+  --surface: #ffffff;
+  --surface-alt: #f7fbff;
+  --surface-border: #dee2e6;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Tipografia / medidas */
+  --font: "Cabin", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --fs-hero: clamp(1.8rem, 2vw + 1.2rem, 3rem);
+  --fs-h2: clamp(1.25rem, 1vw + 1rem, 1.75rem);
+  --fs-body: 1rem;
+
+  /* Sombra */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,.06);
+  --shadow-md: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* ===== Base ===== */
+body{
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--neutral-800);
+  background: linear-gradient(180deg, var(--surface-alt), var(--neutral-50));
+}
+
+.container{
+  width: min(1160px, 100%);
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+/* ===== Layout genérico ===== */
+main{ padding-block: 2rem; }
+.section{ padding-block: 2rem; }
+.titulo{ font-size: var(--fs-h2); color: var(--neutral-900); margin-bottom: .75rem; }
+.subtitulo{ font-weight: 600; color: var(--neutral-700); margin-bottom: .5rem; }
+.lead{ color: var(--neutral-700); }
+
+/* ===== Cabeçalho / Navegação ===== */
+.header{
+  background: linear-gradient(90deg, var(--brand-700), var(--blue-600));
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  position: sticky; top: 0; z-index: 50;
+}
+
+.header__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* afasta logo e menu */
+  gap: 1.25rem;
+  min-height: 64px;
+  padding: .5rem 0;
+}
+
+/* Marca (logo + texto) */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: .75rem;                      /* espaço entre logo e “ONG Mãos Amigas” */
+  min-width: 0;
+}
+.brand .logo{
+  width: 44px; height: 44px; object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.2);
+}
+.brand span{
+  font-weight: 700;
+  letter-spacing: .2px;
+  white-space: nowrap;              /* evita quebra estranha do texto */
+}
+
+/* Navbar */
+.navbar{
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.navbar a{
+  color: #fff;
+  opacity: .95;
+  padding: .5rem .75rem;
+  border-radius: var(--radius-sm);
+  transition: transform .12s ease, background-color .12s ease, opacity .12s ease;
+}
+.navbar a:hover{
+  background: rgba(255,255,255,.12);
+  transform: translateY(-1px);
+}
+.navbar a:active{
+  transform: translateY(0);
+}
+/* Estado ativo (página atual) */
+.navbar a.ativo, .navbar a[aria-current="page"]{
+  background: rgba(255,255,255,.18);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+}
+
+/* Foco visível e acessível */
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.15);
+}
+
+/* ===== Hero / Início (exemplo) ===== */
+.hero{
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 2rem;
+  align-items: center;
+}
+.hero h1{
+  font-size: var(--fs-hero);
+  color: var(--neutral-900);
+  line-height: 1.15;
+  margin-bottom: .75rem;
+}
+.hero p{ color: var(--neutral-700); }
+.hero .cta{
+  margin-top: 1rem;
+  display: flex; gap: .75rem; flex-wrap: wrap;
+}
+
+/* ===== Botões ===== */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: .7rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: filter .12s ease, transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn-primary{
+  background: var(--brand); color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover{ filter: brightness(1.05); }
+.btn-outline{
+  background: transparent; color: #fff;
+  border-color: rgba(255,255,255,.55);
+}
+.btn-neutral{
+  background: var(--neutral-150); color: var(--neutral-900);
+  border-color: var(--surface-border);
+}
+
+/* ===== Cartões / blocos ===== */
+.card{
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Formulários (Cadastro) ===== */
+.form{
+  display: grid; gap: 1rem;
+}
+.input{
+  width: 100%;
+  padding: .75rem .9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-border);
+  background: var(--neutral-50);
+}
+.input:focus{
+  outline: 2px solid var(--brand);
+  box-shadow: 0 0 0 3px rgba(0,119,182,.18);
+}
+.label{ font-weight: 600; color: var(--neutral-800); }
+
+/* ===== Rodapé ===== */
+.footer{
+  margin-top: 2rem;
+  background: var(--neutral-900);
+  color: #eee;
+  padding: 1.25rem 0;
+}
+.footer a{ color: #fff; opacity: .9; }
+.footer a:hover{ opacity: 1; text-decoration: underline; }
+
+/* ===== Utilitários (para classes já usadas no HTML) ===== */
+.flex{ display: flex; }
+.items-center{ align-items: center; }
+.justify-between{ justify-content: space-between; }
+.gap-2{ gap: .5rem; }
+.mt-1{ margin-top: .25rem; }
+.mt-2{ margin-top: .5rem; }
+.mt-3{ margin-top: 1rem; }
+.mb-2{ margin-bottom: .5rem; }
+.mb-3{ margin-bottom: 1rem; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 992px){
+  .hero{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px){
+  .header__inner{
+    flex-wrap: wrap;                /* permite quebrar linha com elegância */
+    gap: .75rem;
+  }
+  .brand{ flex: 1 1 auto; }
+  .navbar{
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: .5rem .75rem;
+    padding-bottom: .25rem;
+  }
+}
+
+@media (max-width: 420px){
+  .brand .logo{ width: 38px; height: 38px; }
+  .navbar a{ padding: .45rem .6rem; }
+}
+
+/* ==============================================
+   SEÇÃO: HOME & DESTAQUES (Atividade 3)
+   ============================================== */
+
+/* Container principal da SPA */
+#app {
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+/* === Abas de navegação === */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.tabs a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--brand);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--brand);
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabs a:hover {
+  background-color: var(--brand-50);
+}
+
+.tabs a[aria-current="page"] {
+  background-color: var(--brand);
+  color: #fff;
+}
+
+/* === Seções === */
+#app > section {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Mostrar a primeira aba por padrão (Home) */
+#app > section:first-child {
+  display: block;
+}
+
+/* === Conteúdo Home === */
+#app section#home {
+  text-align: center;
+  line-height: 1.6;
+}
+
+#app section#home h2 {
+  font-size: 1.8rem;
+  color: var(--brand);
+  margin-bottom: 1rem;
+}
+
+/* === Lista de Destaques === */
+#app section#destaques ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+  display: grid;
+  gap: 1rem;
+}
+
+#app section#destaques li.card {
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  background-color: var(--neutral-50);
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#app section#destaques li.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+#app section#destaques .subtitulo {
+  font-size: 1.2rem;
+  color: var(--brand-700);
+  margin-bottom: 0.3rem;
+}
+
+#app section#destaques p {
+  color: var(--neutral-700);
+  font-size: 0.95rem;
+}
+
+/* === Animação === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

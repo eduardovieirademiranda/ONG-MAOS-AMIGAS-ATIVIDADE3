@@ -1,142 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Voluntário — ONG Mãos Amigas</title>
-  <meta name="description" content="Cadastre-se como voluntário da ONG Mãos Amigas e participe de ações sociais transformadoras.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Voluntários — ONG Mãos Amigas</title>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Cadastro de Voluntário — ONG Mãos Amigas">
-  <meta property="og:description" content="Participe como voluntário e ajude nossos projetos sociais.">
-  <meta property="og:image" content="imagens/ogcover.png">
-  <meta property="og:locale" content="pt_BR">
+  <!-- jQuery + Plugin de Máscaras (Atividade 3) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script>
+    // Máscaras (CPF, Telefone, CEP) — Atv3
+    $(function(){
+      $('#cpf').mask('000.000.000-00');
+      $('#telefone').mask('(00) 00000-0000');
+      $('#cep').mask('00000-000');
+    });
+  </script>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cadastro de Voluntário — ONG Mãos Amigas">
-  <meta name="twitter:description" content="Participe como voluntário e ajude nossos projetos sociais.">
-  <meta name="twitter:image" content="imagens/ogcover.png">
-
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS global (Atividade 2) -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="cadastro">
-  <!-- CABEÇALHO -->
+<body class="page--cadastro">
+  <!-- CABEÇALHO (Atv2) -->
   <header class="header">
     <div class="container header__inner">
       <nav class="navbar flex items-center justify-between">
         <a href="index.html" class="brand flex items-center gap-2">
-          <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo" width="120" height="120" loading="lazy">
+          <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo" width="120" />
           <span>ONG Mãos Amigas</span>
         </a>
 
         <div class="links menu__list flex gap-2">
-          <a href="index.html" class="botao--menu">🏠 Início</a>
-          <a href="projetos.html" class="botao--menu">📋 Projetos</a>
-          <a href="cadastro.html" class="ativo botao--menu" aria-current="page">🤝 Cadastro</a>
+          <a href="index.html">Início</a>
+          <a href="projetos.html">Projetos</a>
+          <a href="cadastro.html" class="ativo" aria-current="page">Cadastro</a>
         </div>
       </nav>
     </div>
+    <div class="subbar">
+      <div class="container">Cadastro de Voluntário</div>
+    </div>
   </header>
 
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- CONTEÚDO PRINCIPAL (Atv2 base) -->
   <main class="section">
-    <section class="container">
-      <h1>Cadastro de Voluntário</h1>
-      <p>Preencha o formulário para participar das nossas ações sociais. Seus dados são utilizados apenas para contato.</p>
-    </section>
-
     <section class="container grid-12">
-      <div class="md:col-6 col-12">
-        <form action="#" method="post" class="card" id="form-cadastro" novalidate>
-          <div class="card__body">
-            <h2 class="card__title">Seus Dados</h2>
+      <!-- Coluna principal: formulário (Atv2) + sucesso local (Atv3) -->
+      <div class="form-wrap md:col-6 col-12">
+        <h2>Cadastro de Voluntário</h2>
+        <img src="imagens/voluntario_1.jpg" alt="Venha ser um voluntário" width="250" class="mt-3" />
+        <p>Preencha o formulário abaixo e junte-se à ONG Mãos Amigas em nossas ações sociais.</p>
 
-            <div class="campo">
-              <label for="nome">Nome completo</label>
-              <input type="text" id="nome" name="nome" required placeholder="Seu nome">
-            </div>
+        <form class="form" id="form-cadastro" action="#" method="post" novalidate>
+          <fieldset class="card">
+            <legend>Dados Pessoais</legend>
 
-            <div class="campo">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
-            </div>
+            <label for="nome" class="label">Nome completo</label>
+            <input type="text" id="nome" name="nome" class="input" placeholder="Digite seu nome completo" required />
 
-            <div class="campo">
-              <label for="telefone">Telefone</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-            </div>
+            <label for="cpf" class="label">CPF</label>
+            <input type="text" id="cpf" name="cpf" class="input" placeholder="000.000.000-00" required />
 
-            <div class="campo">
-              <label for="cpf">CPF</label>
-              <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric">
-            </div>
+            <label for="email" class="label">E-mail</label>
+            <input type="email" id="email" name="email" class="input" placeholder="seuemail@exemplo.com" required />
 
-            <div class="grid-12 gap-2">
-              <div class="col-6">
-                <div class="campo">
-                  <label for="cep">CEP</label>
-                  <input type="text" id="cep" name="cep" placeholder="00000-000" inputmode="numeric">
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="campo">
-                  <label for="cidade">Cidade</label>
-                  <input type="text" id="cidade" name="cidade" placeholder="Sua cidade">
-                </div>
-              </div>
-            </div>
+            <label for="telefone" class="label">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" class="input" placeholder="(00) 00000-0000" required />
 
-            <div class="campo">
-              <label for="interesse">Área de interesse</label>
-              <select id="interesse" name="interesse" required>
-                <option value="">Selecione</option>
-                <option value="educacao">Educação</option>
-                <option value="saude">Saúde</option>
-                <option value="assistencia">Assistência Social</option>
-                <option value="comunicacao">Comunicação</option>
-              </select>
-            </div>
+            <label for="nascimento" class="label">Data de nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" class="input" required />
+          </fieldset>
 
-            <div class="campo">
-              <label for="mensagem">Mensagem (opcional)</label>
-              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre você"></textarea>
-            </div>
+          <fieldset class="card mt-3">
+            <legend>Endereço</legend>
 
-            <div class="acoes">
-              <button type="submit" class="botao">Enviar cadastro</button>
-            </div>
-          </div>
+            <label for="cep" class="label">CEP</label>
+            <input type="text" id="cep" name="cep" class="input" placeholder="00000-000" required />
+
+            <label for="logradouro" class="label">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" class="input" placeholder="Rua/Avenida" required />
+
+            <label for="numero" class="label">Número</label>
+            <input type="text" id="numero" name="numero" class="input" placeholder="123" required />
+
+            <label for="bairro" class="label">Bairro</label>
+            <input type="text" id="bairro" name="bairro" class="input" placeholder="Bairro" required />
+
+            <label for="cidade" class="label">Cidade</label>
+            <input type="text" id="cidade" name="cidade" class="input" placeholder="Cidade" required />
+
+            <label for="estado" class="label">Estado (UF)</label>
+            <select id="estado" name="estado" class="select" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>SP</option><option>RJ</option><option>MG</option><option>ES</option>
+              <option>PR</option><option>SC</option><option>RS</option>
+              <option>BA</option><option>PE</option><option>CE</option><option>AM</option>
+              <option>PA</option><option>DF</option><option>GO</option><option>MT</option>
+            </select>
+          </fieldset>
+
+          <!-- Botão no padrão da Atv2 -->
+          <button type="submit" class="btn btn--primary mt-3">Enviar Cadastro</button>
         </form>
+
+        <!-- Mensagem de sucesso (Atv3) -->
+        <div id="msg-sucesso" class="alert success" role="status" aria-live="polite" hidden>
+          ✅ Cadastro enviado! Em breve entraremos em contato.
+        </div>
       </div>
 
+      <!-- Coluna lateral: "Como Doar" + QR (Atv3) -->
       <aside class="md:col-6 col-12">
         <div class="card">
           <div class="card__body">
-            <h2 class="card__title">Como Doar</h2>
-            <p>Se preferir, você também pode apoiar nossos projetos com doações:</p>
+            <h3 class="card__title">Como Doar</h3>
+            <p>Você pode apoiar nossos projetos com doações:</p>
             <ul>
               <li><strong>PIX:</strong> 11.222.333/0011-44</li>
               <li><strong>E-mail:</strong> ongmaosamigas@gmail.com</li>
               <li><strong>Chave alternativa:</strong> eduardo.mi.2005@gmail.com</li>
             </ul>
 
-            <button id="btn-qr" class="botao botao--secundario" type="button" aria-controls="qr-area" aria-expanded="false">
+            <button id="btn-qr" class="btn btn--secondary" type="button" aria-controls="qr-area" aria-expanded="false">
               Mostrar QR do PIX
             </button>
 
             <figure id="qr-area" hidden class="mt-2">
-              <img src="imagens/pix-qr.png" alt="QR Code do PIX da ONG Mãos Amigas" width="260" height="260" loading="lazy">
+              <img src="imagens/pix-qr.png" alt="QR Code do PIX da ONG Mãos Amigas" width="260" height="260" loading="lazy" />
               <figcaption>Escaneie o QR Code para doar via PIX.</figcaption>
             </figure>
           </div>
         </div>
 
-        <div class="card mt-3" id="doacao">
+        <div class="card mt-3">
           <div class="card__body">
-            <h2 class="card__title">Por que ser voluntário?</h2>
+            <h3 class="card__title">Por que ser voluntário?</h3>
             <p>Você contribui diretamente para transformar realidades e ainda desenvolve habilidades socioemocionais.</p>
           </div>
         </div>
@@ -144,13 +143,18 @@
     </section>
   </main>
 
-  <!-- RODAPÉ -->
-  <footer class="footer center">
-    <p>&copy; 2025 ONG Mãos Amigas — Todos os direitos reservados.</p>
+  <!-- RODAPÉ (Atv2) -->
+  <footer class="section section--muted">
+    <div class="container center">
+      <p>&copy; 2025 ONG Mãos Amigas. Todos os direitos reservados.</p>
+      <p>
+        Contato:
+        <a href="mailto:contato@maosamigas.org">contato@maosamigas.org</a> |
+        Telefone: (11) 98888-7777
+      </p>
+    </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script src="js/script.js"></script>
+ <script src="js/script.js"></script>
 </body>
 </html>

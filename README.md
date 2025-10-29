@@ -53,8 +53,6 @@ A página **projetos.html** apresenta os principais projetos da ONG:
 
 Cada projeto é exibido em formato de **card responsivo**, mantendo a harmonia visual com o restante do site.
 
----
-
 ## 🧩 Scripts Implementados
 
 ```javascript
@@ -64,12 +62,10 @@ if (titulo) titulo.textContent = "Juntos Podemos Transformar Vidas";
 
 // SPA simples (salva última página visitada)
 localStorage.setItem("maosamigas.pagina", id);
-### 🖥️ Prints de Validação W3C (CDN)
+```
 
-## ✅ Validação W3C
+![index](https://cdn.jsdelivr.net/gh/eduardovieirademiranda/ONG-MAOS-AMIGAS-ATIVIDADE3@main/imagens/docs/index-w3c.png)
 
+![projetos](https://cdn.jsdelivr.net/gh/eduardovieirademiranda/ONG-MAOS-AMIGAS-ATIVIDADE3@main/imagens/docs/proj-w3c.png)
 
-![](imagens/docs/index-w3c.png)
-![](imagens/docs/proj-w3c.png)
-![](imagens/docs/cad-w3c.png)
-
+![cadastro](https://cdn.jsdelivr.net/gh/eduardovieirademiranda/ONG-MAOS-AMIGAS-ATIVIDADE3@main/imagens/docs/cad-w3c.png)

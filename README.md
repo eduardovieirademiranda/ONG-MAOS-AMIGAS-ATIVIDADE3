@@ -68,8 +68,8 @@ localStorage.setItem("maosamigas.pagina", id);
 
 ## ✅ Validação W3C
 
-![](imagens/docs/index-w3c.png)
-![](imagens/docs/projw3c.png)
-![](imagens/docs/cadw3c.png)
 
+![](imagens/docs/index-w3c.png)
+![](imagens/docs/proj-w3c.png)
+![](imagens/docs/cad-w3c.png)
 
